@@ -3,3 +3,16 @@ module load MPJ-Express
 javac -cp .:/usr/local/easybuild/software/MPJ-Express/0.44-goolf-
 2015a-Java-9.0.4/lib/mpj.jar HelloWorld.java
 mpjrun.sh -np 2 HelloWorld
+
+export MPJ_HOME=~/Documents/UniMelb/GLAW_UNIMELB_2018_SEM1/COMP90024/ass1/mpj/
+export PATH=$MPJ_HOME/bin:$PATH
+
+#!/bin/bash
+#SBATCH --time=01:00:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=4
+#SBATCH --cpus-per-task=1
+module load Java/1.8.0_71
+module load mpj/0.44
+#javac -cp .:$MPJ_HOME/lib/mpj.jar HelloWorld.java
+#mpjrun.sh -np 4 HelloWorld
