@@ -48,4 +48,21 @@ public class Grid {
         }
     }
 
+    public int size() {
+        return grid.size();
+    }
+
+    public long[] toArray() {
+        long data[] = new long[grid.size()];
+        for (int i = 0; i < grid.size(); i++) {
+            data[i] = grid.get(i).getNumPosts();
+        }
+        return data;
+    }
+
+    public void cumulate(long[] data) {
+        for (int i = 0; i < grid.size(); i++) {
+            grid.get(i).increment(data[i]);
+        }
+    }
 }

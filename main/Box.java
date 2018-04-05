@@ -45,6 +45,10 @@ public class Box {
         numPosts++;
     }
 
+    public void increment(long n) {
+        numPosts += n;
+    }
+
     public int getNumPosts() {
         return numPosts;
     }
